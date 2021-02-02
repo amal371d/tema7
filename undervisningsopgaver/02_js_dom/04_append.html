@@ -96,7 +96,7 @@
     </footer>
 
     <script>
-        //overskrift//
+        //Overskrift//
         const overskrift = document.querySelector("h1");
         overskrift.textContent = "Billedgalleri";
         console.log(overskrift.textContent);
@@ -164,11 +164,28 @@
         let newOverskrift = document.createElement("h3");
         //tekst til over overskrifter
         let newOverskriftText = document.createTextNode("Article 3");
+        //tilføj tekst til billede
+        let newText = document.createElement("p");
+        //teksten
+        let newTextText = document.createTextNode("Her er der lige en ny indsat tekst vha. JavaScript. Wuhu! Det jo bare mega sejt. Gooooo JavaScript!!!")
+        //tilføj billede
+        let newImg = document.createElement("img");
+        //tilføj billedet til newImg
+        newImg.src = "img/travel3.jpg";
 
         //indsæt tekst i overskrift
         newOverskrift.appendChild(newOverskriftText);
+
+        //indsæt tekst i teksten
+        newText.appendChild(newTextText);
+
+        //tilføj img til article
+        newArticle.appendChild(newImg);
         //tilføj overskrift til article
         newArticle.appendChild(newOverskrift);
+        //tilføj tekst til article
+        newArticle.appendChild(newText);
+
         // tilføj article til section
         mainSection.appendChild(newArticle);
     </script>
