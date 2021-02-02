@@ -8,17 +8,13 @@
     <style>
         * {
             box-sizing: border-box;
-        }
-
-        body {
             margin: 0px;
+            padding: 0px;
         }
 
         main {
             margin: auto;
             max-width: 1000px;
-            padding-left: 25px;
-            padding-right: 25px;
         }
 
         img {
@@ -27,6 +23,12 @@
 
         h1 {
             text-align: center;
+            padding-bottom: 8px;
+            padding-top: 8px;
+        }
+
+        h2 {
+            padding-left: 25px;
         }
 
         article {
@@ -40,24 +42,29 @@
             border-width: 1.5px;
         }
 
+        footer p {
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+
         header {
             position: relative;
             border-style: solid none;
             border-width: 1.5px;
         }
 
-        @media(min-width: 600px) {
-            section {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                column-gap: 15px;
-            }
 
-            main {
+        section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            column-gap: 15px;
+            padding-left: 25px;
+            padding-right: 25px;
+        }
 
-                padding-left: 5px;
-                padding-right: 5px;
-            }
+        main {
+            padding-left: 5px;
+            padding-right: 5px;
         }
     </style>
 </head>
@@ -73,12 +80,12 @@
         <section>
             <article>
                 <img src="https://placeimg.com/500/480/nature" alt="firstpicture">
-                <h3>Articel 1</h3>
+                <h3>Article 1</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci, nulla voluptas aspernatur facere repudiandae illo eaque sunt delectus obcaecati inventore ea numquam quibusdam ipsa doloribus, aliquam neque quos tempore, nesciunt laudantium deleniti libero ratione esse.</p>
             </article>
             <article>
                 <img src="https://placeimg.com/500/480/arch" alt="secondpicture">
-                <h3>Articel 2</h3>
+                <h3>Article 2</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem velit dolorum sequi laboriosam voluptatum quasi quos perferendis labore at cupiditate autem alias obcaecati dolores deleniti mollitia sunt sit, officia, quae, incidunt amet.</p>
             </article>
         </section>
