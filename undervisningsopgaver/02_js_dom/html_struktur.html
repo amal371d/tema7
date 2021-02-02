@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0px;
+        }
+
+        main {
+            margin: auto;
+            max-width: 1000px;
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        article {
+            border-style: solid;
+            border-width: 1.5px;
+        }
+
+        footer {
+            text-align: center;
+            border-style: solid none;
+            border-width: 1.5px;
+        }
+
+        header {
+            position: relative;
+            border-style: solid none;
+            border-width: 1.5px;
+        }
+
+        @media(min-width: 600px) {
+            section {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                column-gap: 15px;
+            }
+
+            main {
+
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Titel</h1>
+    </header>
+
+    <main>
+        <h2>Undertitel</h2>
+        <section>
+            <article>
+                <img src="https://placeimg.com/500/480/nature" alt="firstpicture">
+                <h3>Articel 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci, nulla voluptas aspernatur facere repudiandae illo eaque sunt delectus obcaecati inventore ea numquam quibusdam ipsa doloribus, aliquam neque quos tempore, nesciunt laudantium deleniti libero ratione esse.</p>
+            </article>
+            <article>
+                <img src="https://placeimg.com/500/480/arch" alt="secondpicture">
+                <h3>Articel 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem velit dolorum sequi laboriosam voluptatum quasi quos perferendis labore at cupiditate autem alias obcaecati dolores deleniti mollitia sunt sit, officia, quae, incidunt amet.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>This is the footer</p>
+    </footer>
+
+    <script></script>
+</body></html>
