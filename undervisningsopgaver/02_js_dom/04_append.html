@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        main {
+            margin: auto;
+            max-width: 1000px;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            padding-bottom: 8px;
+            padding-top: 8px;
+        }
+
+        h2 {
+            padding-left: 25px;
+        }
+
+        article {
+            border-style: solid;
+            border-width: 1.5px;
+        }
+
+        footer {
+            text-align: center;
+            border-style: solid none;
+            border-width: 1.5px;
+        }
+
+        footer p {
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+
+        header {
+            position: relative;
+            border-style: solid none;
+            border-width: 1.5px;
+        }
+
+
+        section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            column-gap: 15px;
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+
+        main {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Titel</h1>
+    </header>
+
+    <main>
+        <h2>Undertitel</h2>
+        <section>
+            <article>
+                <img src="https://placeimg.com/500/480/nature" alt="firstpicture">
+                <h3>Articel 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci, nulla voluptas aspernatur facere repudiandae illo eaque sunt delectus obcaecati inventore ea numquam quibusdam ipsa doloribus, aliquam neque quos tempore, nesciunt laudantium deleniti libero ratione esse. </p>
+            </article>
+            <article>
+                <img src="https://placeimg.com/500/480/arch" alt="secondpicture">
+                <h3>Articel 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem velit dolorum sequi laboriosam voluptatum quasi quos perferendis labore at cupiditate autem alias obcaecati dolores deleniti mollitia sunt sit, officia, quae, incidunt amet.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>This is the footer</p>
+    </footer>
+
+    <script>
+        //overskrift//
+        const overskrift = document.querySelector("h1");
+        overskrift.textContent = "Billedgalleri";
+        console.log(overskrift.textContent);
+
+        //undertitel//
+        const undertitel = document.querySelector("h2");
+        undertitel.textContent;
+        console.log(undertitel.textContent);
+
+        //article 1//
+        const art1 = document.querySelector("article:first-child");
+        art1.textContent;
+        console.log(art1.textContent);
+
+        //article 1 img//
+        const img1 = document.querySelector("article:first-child img");
+        img1.src = "img/travel.jpg";
+        img1.alt = "Drømmende strand";
+        console.log(img1);
+
+        //article 1 h3//
+        const h3_1 = document.querySelector("article:first-child h3");
+        h3_1.textContent = "Article about...?";
+        console.log(h3_1.textContent);
+
+        //article 1 p//
+        const p1 = document.querySelector("article:first-child p");
+        p1.textContent = "Wow se lige hvor fint det her billede er. Læg mærke til det fine motiv, lysindfald osv. Consectetur voluptatibus suscipit tenetur voluptate nulla ullam nam quia totam sequi, asperiores, eius labore ducimus non, sint. ";
+        console.log(p1.textContent);
+
+        //article 2//
+        const art2 = document.querySelector("article:nth-child(2)");
+        art2.textContent;
+        console.log(art2.textContent);
+
+        //article 2 img//
+        const img2 = document.querySelector("article:nth-child(2) img");
+        img2.src = "img/travel2.jpg";
+        img2.alt = "Flotte natur";
+        console.log(img2);
+
+        //article 2 h3//
+        const h3_2 = document.querySelector("article:nth-child(2) h3");
+        h3_2.textContent = "Wow look at this";
+        console.log(h3_2.textContent);
+
+        //article 2 p//
+        const p2 = document.querySelector("article:nth-child(2) p");
+        p2.textContent;
+        p2.innerHTML = "<b>Og det her billede. Endnu et vidunder. Godt nok nogle fine billeder i det her smukke galleri. Dolorem velit dolorum sequi laboriosam voluptatum quasi quos perferendis labore at cupiditate autem alias obcaecati dolores deleniti mollitia sunt sit."
+        console.log(p2.innerHTML);
+
+        //article 2 footer//
+        const footer = document.querySelector("footer");
+        footer.textContent;
+        console.log(footer.textContent);
+
+        //-------------tilføj et ekstra element----------------//
+
+
+        let mainSection = document.querySelector("section");
+        //nyt article element
+        let newArticle = document.createElement("article");
+        //nyt H3 element
+        let newOverskrift = document.createElement("h3");
+        //tekst til over overskrifter
+        let newOverskriftText = document.createTextNode("Article 3");
+
+        //indsæt tekst i overskrift
+        newOverskrift.appendChild(newOverskriftText);
+        //tilføj overskrift til article
+        newArticle.appendChild(newOverskrift);
+        // tilføj article til section
+        mainSection.appendChild(newArticle);
+    </script>
+</body></html>
