@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        article {
+            border: 1px solid #333;
+            padding: 20px;
+            margin-bottom: 6px;
+        }
+
+        img {
+            max-width: 30%;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <section>
+
+    </section>
+
+
+    <template>
+        <article>
+            <h2></h2>
+            <img src="" alt="">
+            <p class="art"></p>
+            <p class="place"></p>
+        </article>
+    </template>
+
+    <script>
+        let dyr = [{
+            "navn": "Gris",
+            "type": "Pattedyr",
+            "levested": "Svinefarmen",
+            "billede": "http://mabe-kea.dk/E19/pics/pig.png"
+        }, {
+            "navn": "Frø",
+            "type": "Amfibie",
+            "levested": "Vandhullet",
+            "billede": "http://mabe-kea.dk/E19/pics/frog.png"
+        }, {
+            "navn": "Ræv",
+            "type": "Pattedyr",
+            "levested": "Skoven",
+            "billede": "http://mabe-kea.dk/E19/pics/fox.png"
+        }, {
+            "navn": "Sild",
+            "type": "Fisk",
+            "levested": "Havet",
+            "billede": "http://mabe-kea.dk/E19/pics/sild.jpg"
+        }, {
+            "navn": "Krokodille",
+            "type": "Krybdyr",
+            "levested": "Floden",
+            "billede": "http://mabe-kea.dk/E19/pics/kroko.jpg"
+        }]
+
+
+        let container = document.querySelector("section");
+        let temp = document.querySelector("template");
+        //løb igennem array "dyr"
+        dyr.forEach(etDyr => {
+
+            let klon = temp.cloneNode(true).content;
+            klon.querySelector("h2").textContent = etDyr.navn;
+            klon.querySelector(".art").textContent = `Type: ${etDyr.type}`;
+            klon.querySelector(".place").textContent = `Levested: ${etDyr.levested}`
+            klon.querySelector("img").src = etDyr.billede;
+            container.appendChild(klon);
+        })
+
+    </script>
+</body>
+
+</html>
