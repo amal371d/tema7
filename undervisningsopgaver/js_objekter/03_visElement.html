@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vis Dyr</title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+    <article id="information">
+        <h3></h3>
+        <img src="" alt="">
+        <p>Type: </p>
+        <p class="p2">Levested: </p>
+    </article>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+
+        let dyr = {
+            "navn": "gris",
+            "type": "pattedyr",
+            "billede": "http://mabe-kea.dk/E19/pics/pig.png",
+            "levested": "svinefarm"
+        };
+
+        //Udskriv objektet med console.log - se efter i console, hvordan det ser ud - prøv at folde det ud, så du kan se detaljerne//
+        console.log(dyr);
+
+
+        //Udskriv dyrets navn, type og levested i console- vinduet på denne form:“Dyr: ..., type: ..., levested: ...”//
+        console.log(`Dyr: ${dyr.navn}, type: ${dyr.type}, levested: ${dyr.levested}`);
+
+        function start() {
+            console.log("Siden er loaded");
+
+            //tilføj til DOM
+            const destination = document.querySelector("#information");
+
+            const indhold = `Dyr: ${dyr.navn}, type: ${dyr.type}, levested: ${dyr.levested}`;
+
+            destination.querySelector("h3").textContent = dyr.navn;
+
+            destination.querySelector("img").src = "http://mabe-kea.dk/E19/pics/pig.png";
+
+            destination.querySelector("p").textContent += dyr.type;
+
+            destination.querySelector(".p2").textContent += dyr.levested;
+        }
+
+    </script>
+</body>
+
+</html>
