@@ -206,10 +206,6 @@
             //Skift billede med JS
             img1.addEventListener("click", changeImg);
 
-            function changeImg() {
-                console.log("Billede skift");
-                img1.src = "img/travel4.jpg";
-            }
 
             //-------giv articel class--------//
 
@@ -223,22 +219,23 @@
             console.log(newArticle);
 
             //-------mouseower på articel--------//
-            art1.addEventListener("mouseover", shadowGone);
-            art2.addEventListener("mouseover", shadowGone);
-            newArticle.addEventListener("mouseover", shadowGone);
+            art1.addEventListener("mouseover", shadowOverAndOut);
+            art2.addEventListener("mouseover", shadowOverAndOut);
+            newArticle.addEventListener("mouseover", shadowOverAndOut);
 
-            art1.addEventListener("mouseout", shadowShow);
-            art2.addEventListener("mouseout", shadowShow);
-            newArticle.addEventListener("mouseout", shadowShow);
+            art1.addEventListener("mouseout", shadowOverAndOut);
+            art2.addEventListener("mouseout", shadowOverAndOut);
+            newArticle.addEventListener("mouseout", shadowOverAndOut);
 
-            function shadowGone() {
-                this.classList.remove("boxshadow");
-            }
+        }
 
-            function shadowShow() {
-                this.classList.add("boxshadow");
-            }
+        function shadowOverAndOut() {
+            this.classList.toggle("boxshadow");
+        }
 
+        function changeImg() {
+            console.log("Billede skift");
+            img1.src = "img/travel4.jpg";
         }
     </script>
 </body></html>
