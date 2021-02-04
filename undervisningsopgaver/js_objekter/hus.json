@@ -1,0 +1,13 @@
+[{
+    "hus": "Vila",
+    "størrelse": 160,
+    "indhold": ["Køkken", "Bad", "Have"]
+        }, {
+    "hus": "Rækkehus",
+    "størrelse": 110,
+    "indhold": ["Kælder", "Stue", "Trappe"]
+        }, {
+    "hus": "Lejlighed",
+    "størrelse": 72,
+    "indhold": ["Værelse", "Altan", "Bagtrappe"]
+        }]

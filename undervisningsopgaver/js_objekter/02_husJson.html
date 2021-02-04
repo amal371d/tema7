@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sport</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        section {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        article {
+            border: 1px solid #333;
+            background-color: rgba(250, 235, 215, 0.37);
+            padding: 10px;
+            margin-bottom: 6px;
+        }
+
+        img {
+            max-width: 30%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section>
+
+    </section>
+
+    <template>
+        <article>
+            <h2></h2>
+            <p class="size"></p>
+            <p class="indhold"></p>
+            <p><b>Indhold:</b></p>
+            <ul class="indholdsliste"></ul>
+        </article>
+    </template>
+
+
+    <script>
+        let container = document.querySelector("section");
+        let temp = document.querySelector("template");
+
+        const fil = "hus.json";
+
+        async function hentdata(fil) {
+            const resultat = await fetch(fil);
+            const json = await resultat.json();
+            vis(json);
+        }
+
+        function vis(json) {
+            json.forEach(etHus => {
+                let klon = temp.cloneNode(true).content;
+                klon.querySelector("h2").textContent = etHus.hus;
+                klon.querySelector(".size").textContent = `Størrelse: ${etHus.størrelse} m2`;
+                //                klon.querySelector(".indhold").textContent = `Indhold: ${etHus.indhold}`;
+
+                etHus.indhold.forEach(ting => {
+                    klon.querySelector(".indholdsliste").innerHTML += "<li>" + ting + "</li>";
+                })
+                container.appendChild(klon);
+            })
+        }
+
+        hentdata(fil);
+    </script>
+</body></html>
