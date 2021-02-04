@@ -14,7 +14,7 @@
         <h3></h3>
         <img src="" alt="">
         <p>Type: </p>
-        <p class="p2">Levested: </p>
+        <p>Levested: </p>
     </article>
 
     <script>
@@ -27,11 +27,7 @@
             "levested": "svinefarm"
         };
 
-        //Udskriv objektet med console.log - se efter i console, hvordan det ser ud - prøv at folde det ud, så du kan se detaljerne//
         console.log(dyr);
-
-
-        //Udskriv dyrets navn, type og levested i console- vinduet på denne form:“Dyr: ..., type: ..., levested: ...”//
         console.log(`Dyr: ${dyr.navn}, type: ${dyr.type}, levested: ${dyr.levested}`);
 
         function start() {
@@ -43,12 +39,9 @@
             const indhold = `Dyr: ${dyr.navn}, type: ${dyr.type}, levested: ${dyr.levested}`;
 
             destination.querySelector("h3").textContent = dyr.navn;
-
             destination.querySelector("img").src = "http://mabe-kea.dk/E19/pics/pig.png";
-
-            destination.querySelector("p").textContent += dyr.type;
-
-            destination.querySelector(".p2").textContent += dyr.levested;
+            destination.querySelector("article :nth-child(3)").textContent += dyr.type;
+            destination.querySelector("article :nth-child(4)").textContent += dyr.levested;
         }
 
     </script>
