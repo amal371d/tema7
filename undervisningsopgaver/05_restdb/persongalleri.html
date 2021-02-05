@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persongalleri</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: rgba(212, 212, 203, 0.52);
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        header {
+            background-color: rgba(71, 100, 96, 0.76);
+            position: relative;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            margin-bottom: 30px;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            max-width: 1200px;
+            grid-gap: 12px;
+            margin: 0 auto;
+            padding: 15px 40px;
+        }
+
+        article {
+            border: 2px solid rgba(71, 100, 96, 0.76);
+        }
+
+        .billede {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 85%;
+            padding-top: 10px;
+        }
+
+        h1 {
+            padding-left: 40px;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            color: rgb(230, 230, 220);
+            font-size: 2.2rem;
+        }
+
+        h2,
+        p {
+            padding-left: 10px;
+            padding-right: 10px;
+            font-family: 'Raleway', sans-serif;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Persongalleri</h1>
+    </header>
+
+    <main>
+
+    </main>
+
+    <template>
+        <article>
+            <img src="" alt="" class="billede" class="center">
+            <h2 class="navn"></h2>
+            <p class="fødselsdag"><strong>Fødselsdato: </strong></p>
+            <p class="titel"><b>Beskæftigelse: </b></p>
+            <p class="hobby"><b>Hobby: </b></p>
+        </article>
+    </template>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", hentData);
+
+        const url = "https://persongalleri-5d3e.restdb.io/rest/persongalleri";
+        const medieurl = "https://persongalleri-5d3e.restdb.io/media/";
+
+        const options = {
+            headers: {
+                'x-apikey': "600fe9211346a1524ff12e31"
+            }
+        };
+
+        const main = document.querySelector("main");
+        const template = document.querySelector("template").content;
+
+        async function hentData() {
+            const resspons = await fetch(url, options);
+            const json = await resspons.json();
+            vis(json);
+        }
+
+        function vis(json) {
+            console.log(json);
+            json.forEach(person => {
+                const klon = template.cloneNode(true);
+                klon.querySelector(".billede").src = medieurl + person.billede;
+                klon.querySelector(".navn").textContent += `${person.fornavn} ${person.efternavn}`;
+                klon.querySelector(".fødselsdag").textContent += person.fødselsdag;
+                klon.querySelector(".titel").textContent += person.titel;
+                klon.querySelector(".hobby").textContent += person.hobby;
+                main.appendChild(klon);
+            })
+        }
+
+    </script>
+</body>
+
+</html>
