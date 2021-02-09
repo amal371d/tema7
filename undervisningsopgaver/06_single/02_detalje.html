@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalje</title>
+    <style>
+        article {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 15px;
+            max-width: 1100px;
+        }
+
+        article #left {
+            grid-column: 1/2;
+        }
+
+        #article #right {
+            grid-column: 2/3;
+        }
+
+        img {
+            width: 100%;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <article>
+        <div class="left">
+            <img src="" alt="" class="profil-billede">
+        </div>
+        <div class="right">
+            <h2 class="navn"></h2>
+            <p class="dag"></p>
+            <p class="titel"></p>
+            <p class="hobby"></p>
+            <p class="tro"></p>
+
+            <button id="knaptilbage">Tilbage til startsiden</button>
+        </div>
+    </article>
+
+
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get("id");
+
+        const medieurl = "https://persongalleri-5d3e.restdb.io/media/";
+        let person;
+        const myHeaders = {
+            "x-apikey": "600fe9211346a1524ff12e31"
+        }
+
+        console.log("ID", id);
+        document.addEventListener("DOMContentLoaded", loadJSON);
+
+        async function loadJSON() {
+            const JSONData = await fetch(`https://persongalleri-5d3e.restdb.io/rest/persongalleri/${id}`, {
+                headers: myHeaders
+            });
+            person = await JSONData.json();
+
+            console.log("Personer", person);
+            visPerson(person);
+
+        }
+
+        function visPerson() {
+            document.querySelector(".profil-billede").src = medieurl + person.billede;
+            document.querySelector(".navn").textContent = person.fornavn + " " + person.efternavn;
+
+            const string = person.fødselsdag;
+            const pattern = /[0-9][0-9][0-9][0-9][-][0-9][0-9][-][0-9][0-9]/; // mønster: XXXX-XX-XX
+            const result = string.match(pattern); // find den del af string der matcher mønster (pattern)
+
+            document.querySelector(".dag").textContent = `Fødselsdato: ` + result;
+            document.querySelector(".titel").textContent = `Beskæftigelse: ${person.titel}`;
+            document.querySelector(".hobby").textContent = `Hobby: ${person.hobby}`;
+            document.querySelector(".tro").textContent = `Troende?: ${person.troende}`;
+
+            //eventlistener tilbage til startsiden
+            document.querySelector("#knaptilbage").addEventListener("click", tilbageTilStartsiden);
+        }
+
+        function tilbageTilStartsiden() {
+            history.back();
+        }
+
+    </script>
+</body>
+
+</html>
