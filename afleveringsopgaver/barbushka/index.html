@@ -4,24 +4,44 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barbushka</title>
+    <title>Babushka</title>
     <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
-    <header>
-        <nav></nav>
-    </header>
+    <nav id="navn">
+        <a href="index.html">Barbushka</a>
+    </nav>
+
+    <header id="splash"></header>
 
     <main>
-        <h1></h1>
-        <section></section>
+        <h1>Velkommen til Bistro Babushka</h1>
+        <nav id="menukort">
+            <button data-kategorier="alle" class="valgt">Alle</button>
+            <button data-kategorier="forretter">Forretter</button>
+            <button data-kategorier="hovedretter">Hovedretter</button>
+            <button data-kategorier="sideorders">Sideorders</button>
+            <button data-kategorier="desserter">Dessert</button>
+            <button data-kategorier="drikkevarer">Drikkevarer</button>
+        </nav>
+        <h2>Alle retter</h2>
+
+        <section id="liste"></section>
 
         <template>
             <article>
                 <img src="" alt="" class="billede">
-                <h2 class="ret"></h2>
-                <p class="pris"></p>
+                <h3 class="ret"></h3>
+                <p class="information"></p>
+                <p class="pris"> Pris: </p>
                 <button>Læs mere</button>
             </article>
         </template>
@@ -29,10 +49,15 @@
     </main>
 
     <footer>
-
+        <p id="adresse"> <b>Adresse:</b> <br>
+            Kapelvej 60, <br>
+            2200 København N</p>
+        <p id="tider"> <b>Åbningstider:</b> <br>
+            Mandag - fredag: 10.30 - 22.00<br>
+            Lørdag: 12.00 - 23.00</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script2.js"></script>
 </body>
 
 </html>

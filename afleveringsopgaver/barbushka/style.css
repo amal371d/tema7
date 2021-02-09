@@ -1,15 +1,194 @@
- section {
-     display: grid;
-     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-     max-width: 1100px;
-     grid-gap: 12px;
-     margin: 0 auto;
-     padding: 15px 40px;
- }
+* {
+    box-sizing: border-box;
+}
 
- .billede {
-     display: block;
-     margin-left: auto;
-     margin-right: auto;
-     width: 95%;
- }
+body {
+    background-color: #D8C9CB;
+    margin: 0 auto;
+    padding: 0;
+}
+
+section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-gap: 20px;
+}
+
+main {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 15px 40px;
+}
+
+.billede {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 94%;
+    /*    padding: 15px 10px 0px 10px;*/
+}
+
+#splash {
+    width: 100%;
+    background-size: cover;
+    background-image: url(img/splash.jpg);
+    max-width: none;
+    height: 50vh;
+    background-position: 68% 10%;
+    margin-bottom: 10px;
+}
+
+/*article*/
+
+article {
+    border: 2px solid #753740;
+    padding: 15px 10px 20px 10px;
+}
+
+article p {
+    padding: 0px 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+article button {
+    margin-left: 10px;
+    margin-bottom: 5px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #753740;
+    border: none;
+    color: #D8C9CB;
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 14px;
+}
+
+/*navigation/button + class til knapper*/
+
+nav button {
+    background-color: #D8C9CB;
+    color: black;
+    border: none;
+    padding: 12px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.valgt {
+    border: 1.8px solid #753740;
+    box-shadow: 0px 0px 20px -7.5px rgba(0, 0, 0, 0.75);
+}
+
+#navn {
+    background-color: #753740;
+    padding: 14px 0px;
+
+    text-align: left;
+    font-family: 'Advent Pro', sans-serif;
+}
+
+#navn:link {
+    color: #D8C9CB;
+    text-decoration: none;
+}
+
+/*footer*/
+
+footer {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13.5px;
+    padding-top: 25px;
+    padding: 10px;
+    margin-top: 40px;
+    line-height: 1.5;
+}
+
+/*font*/
+
+h1 {
+    font-family: 'Advent Pro', sans-serif;
+    font-size: 2.1rem;
+    padding: 10px 0px;
+}
+
+
+h2 {
+    font-family: 'Advent Pro', sans-serif;
+    font-size: 1.65rem;
+}
+
+
+h3 {
+    padding: 0px 10px;
+    font-size: 1.15rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+article .information {
+    font-size: 0.85rem;
+}
+
+article .pris {
+    font-size: 0.9rem;
+}
+
+@media (min-width:600px) {
+    h1 {
+        font-size: 2.25rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    article .information {
+        font-size: 0.9rem;
+    }
+
+    article .pris {
+        font-size: 1rem;
+    }
+
+    footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        /*        justify-content: center;*/
+    }
+}
+
+
+@media (min-width: 900px) {
+    h1 {
+        font-size: 2.4rem;
+    }
+
+    h2 {
+        font-size: 1.85rem;
+    }
+
+    h3 {
+        font-size: 1.15rem;
+    }
+
+    article .information {
+        font-size: 0.95rem;
+    }
+
+    article .pris {
+        font-size: 1.05rem;
+    }
+
+}

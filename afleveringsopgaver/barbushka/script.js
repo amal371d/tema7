@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", hentData);
 
+const kategori = document.querySelector("h2");
+
 const url = "https://babushka-dd8a.restdb.io/rest/menu";
 const medieurl = "https://babushka-dd8a.restdb.io/media/";
 
@@ -24,7 +26,7 @@ function vis(json) {
         const klon = template.cloneNode(true);
         klon.querySelector(".billede").src = medieurl + mad.billede;
         klon.querySelector(".ret").textContent = mad.navn;
-        klon.querySelector(".pris").textContent = mad.pris;
+        klon.querySelector(".pris").textContent = `Pris: ${mad.pris} DKK`;
 
         section.appendChild(klon);
     })
