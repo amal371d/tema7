@@ -86,7 +86,6 @@
                 font-size: 1.1rem;
             }
         }
-
     </style>
 </head>
 
@@ -107,7 +106,6 @@
                     <h2 class="ret"></h2>
                     <p class="information"></p>
                     <p class="oprindelse"></p>
-                    <p class="ret_kategori"></p>
                     <p class="pris"></p>
                     <button class="more">Tilbage til startsiden</button>
                 </div>
@@ -156,7 +154,6 @@
             document.querySelector(".ret").textContent = kategori.navn;
             document.querySelector(".information").textContent = kategori.langbeskrivelse;
             document.querySelector(".oprindelse").textContent = `Oprindelsesland: ${kategori.oprindelsesregion}`;
-            document.querySelector(".ret_kategori").textContent = `Kategori: ${kategori.kategori}`;
             document.querySelector(".pris").textContent = `Pris: ${kategori.pris} DKK`;
 
             document.querySelector(".more").addEventListener("click", tilbageTilStartsiden);
@@ -165,8 +162,5 @@
         function tilbageTilStartsiden() {
             history.back();
         }
-
     </script>
-</body>
-
-</html>
+</body></html>
