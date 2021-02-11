@@ -263,7 +263,6 @@
                 font-size: 0.97rem;
             }
         }
-
     </style>
 
 </head>
@@ -349,6 +348,7 @@
             document.querySelector("#menuknap").classList.toggle("change");
         }
 
+
         // eventlistener knyttet til knapperne der vælger hvilket filter der er aktivt
         function filtrerRetter() {
             filter = this.dataset.kategorier; //sæt variablen "filter" til værdien af data-kategorier på den knap der er trykket på
@@ -403,8 +403,5 @@
         function visDetaljer(hvilken) {
             location.href = `specifikation.html?id=${hvilken._id}`;
         }
-
     </script>
-</body>
-
-</html>
+</body></html>
