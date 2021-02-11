@@ -58,7 +58,7 @@
             color: #D8C9CB;
             text-align: center;
             padding: 10px 16px;
-            font-size: 14px;
+            font-size: 0.8rem;
             cursor: pointer;
         }
 
@@ -73,11 +73,11 @@
             background-color: #D8C9CB;
             color: black;
             border: none;
-            padding: 11px 23px;
+            padding: 8px 25px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
-            font-size: 16px;
+            font-size: 0.85rem;
             font-family: 'Montserrat', sans-serif;
             margin-bottom: 5px;
         }
@@ -85,12 +85,11 @@
 
         #menukort {
             display: flex;
-            gap: 13px;
+            gap: 10px;
         }
 
         .valgt {
-            border: 1.8px solid #753740;
-            box-shadow: none;
+            border: 1.9px solid #753740;
         }
 
         /*fonts*/
@@ -106,6 +105,14 @@
 
         article .pris {
             font-size: 0.9rem;
+        }
+
+        #start p {
+            line-height: 1.5;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            text-align: center;
+            padding-bottom: 15px;
         }
 
         /*burgermenu*/
@@ -129,6 +136,7 @@
             text-align: center;
             padding-top: 10px;
             margin-left: -40px;
+            margin-top: 56px;
         }
 
         .change .bar1 {
@@ -158,10 +166,10 @@
 
         nav ul {
             position: absolute;
-            z-index: 1;
+            z-index: 10;
             background-color: #D8C9CB;
             width: 100%;
-            height: 42vh;
+            height: 34vh;
             padding: 0;
             margin: 0 auto;
             margin-top: 44px;
@@ -178,6 +186,14 @@
 
             article .pris {
                 font-size: 0.95rem;
+            }
+
+            #start p {
+                font-size: 0.95rem;
+            }
+
+            nav button {
+                font-size: 0.9rem;
             }
         }
 
@@ -203,13 +219,10 @@
 
             #menu {
                 margin-left: 0px;
+                padding-top: 0px;
             }
 
             /*knapperne i navigationen*/
-
-            .valgt {
-                box-shadow: 0px 0px 20px -7.5px rgba(0, 0, 0, 0.75);
-            }
 
             nav ul {
                 position: relative;
@@ -219,6 +232,11 @@
             /*font*/
             h1 {
                 margin-bottom: -10px;
+                text-align: left;
+            }
+
+            #start p {
+                padding-bottom: 0px;
                 text-align: left;
             }
         }
@@ -232,6 +250,14 @@
 
             article .pris {
                 font-size: 1rem;
+            }
+
+            #start p {
+                font-size: 1rem;
+            }
+
+            nav button {
+                font-size: 0.97rem;
             }
         }
 
@@ -247,7 +273,10 @@
     <header id="splash"></header>
 
     <main>
-        <h1>Velkommen til Bistro Babushka</h1>
+        <div id="start">
+            <h1>Velkommen til Bistro Babushka</h1>
+            <p>Her hos Bistro Babushka sætter vi stort fokus på, at skabe en god russisk oplevelse for vores kunder. Man kan vælge frit mellem flere forskellige forretter, hovedretter, sideorders, desserter og drikkevarer. Nedenunder kan du se vores udvalg: </p>
+        </div>
 
         <nav id="menukort">
             <div id="menuknap">
