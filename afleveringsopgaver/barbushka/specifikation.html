@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Om</title>
+
+    <link rel="stylesheet" href="main.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+
+    <style>
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        article {
+            padding-bottom: 40px;
+            padding-top: 50px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        img {
+            width: 100%;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .right_col {
+            padding-left: 25px;
+            margin-right: 26px;
+        }
+
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        article p {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        article button {
+            margin-left: 0px;
+            margin-bottom: 5px;
+        }
+
+        @media (min-width:750px) {
+            article {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+
+            article {
+                padding-bottom: 120px;
+                padding-top: 100px;
+            }
+
+            img {
+
+                padding-left: 0px;
+                padding-right: 0px;
+            }
+
+            .right_col {
+                margin-top: -25px;
+                padding-left: 0px;
+                margin-right: 0px;
+            }
+        }
+
+        @media (min-width:900px) {
+            .right_col .information {
+                font-size: 1rem;
+            }
+
+            .right_col .pris {
+                font-size: 1.1rem;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <nav id="navn">
+        <a href="index.html">Bistro Babushka</a>
+    </nav>
+
+    <main>
+        <section id="menuen">
+
+            <article>
+                <div class="left_col">
+                    <img src="" alt="" class="billede">
+                </div>
+                <div class="right_col">
+                    <h2 class="ret"></h2>
+                    <p class="information"></p>
+                    <p class="oprindelse"></p>
+                    <p class="ret_kategori"></p>
+                    <p class="pris"></p>
+                    <button class="more">Tilbage til startsiden</button>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <footer>
+        <p id="adresse"> <b>Adresse:</b> <br>
+            Kapelvej 60, <br>
+            2200 København N</p>
+        <p id="tider"> <b>Åbningstider:</b> <br>
+            Mandag - fredag: 10.30 - 22.00<br>
+            Lørdag: 12.00 - 23.00</p>
+    </footer>
+
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get("id");
+
+        const medieurl = "https://babushka-dd8a.restdb.io/media/";
+        let kategori;
+        let ret;
+
+        const myHeaders = {
+            "x-apikey": "600ec2fb1346a1524ff12de4"
+        }
+
+        console.log("ID", id);
+        document.addEventListener("DOMContentLoaded", loadJSON);
+
+        async function loadJSON() {
+            const JSONData = await fetch(`https://babushka-dd8a.restdb.io/rest/menu/${id}`, {
+                headers: myHeaders
+            });
+            kategori = await JSONData.json();
+            console.log("Kategorierne", kategori);
+            visRetter(ret);
+        }
+
+        function visRetter() {
+            document.querySelector(".billede").src = medieurl + kategori.billede;
+            document.querySelector(".billede").alt = "" + kategori.navn;
+            document.querySelector(".ret").textContent = kategori.navn;
+            document.querySelector(".information").textContent = kategori.langbeskrivelse;
+            document.querySelector(".oprindelse").textContent = `Oprindelsesland: ${kategori.oprindelsesregion}`;
+            document.querySelector(".ret_kategori").textContent = `Kategori: ${kategori.kategori}`;
+            document.querySelector(".pris").textContent = `Pris: ${kategori.pris} DKK`;
+
+            document.querySelector(".more").addEventListener("click", tilbageTilStartsiden);
+        }
+
+        function tilbageTilStartsiden() {
+            history.back();
+        }
+
+    </script>
+</body>
+
+</html>

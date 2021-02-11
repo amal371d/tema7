@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+        background-color: #D8C9CB;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.billede {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 94%;
+}
+
+#navn {
+    background-color: #753740;
+    padding: 13px 0px;
+    text-align: left;
+    font-family: 'Advent Pro', sans-serif;
+    padding-left: 20px;
+    font-size: 24px;
+    z-index: 20;
+}
+
+/*øverste del af site*/
+
+#navn a:link {
+    text-decoration: none;
+    color: #D8C9CB;
+}
+
+#navn a:visited {
+    text-decoration: none;
+    color: #D8C9CB;
+}
+
+#navn a:active {
+    text-decoration: none;
+    color: #D8C9CB;
+}
+
+/*button*/
+
+article button {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #753740;
+    border: none;
+    color: #D8C9CB;
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/*footer*/
+
+footer {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13.5px;
+    padding-top: 25px;
+    padding: 10px;
+    margin-top: 40px;
+    line-height: 1.5;
+}
+
+/*font*/
+
+h1 {
+    font-family: 'Advent Pro', sans-serif;
+    font-size: 2.1rem;
+}
+
+
+h2 {
+    font-family: 'Advent Pro', sans-serif;
+    font-size: 1.65rem;
+}
+
+
+h3 {
+    padding: 0px 10px;
+    font-size: 1.15rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+@media (min-width:650px) {
+    h1 {
+        font-size: 2.25rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    #navn {
+        font-size: 27px;
+    }
+
+    footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+@media (min-width: 900px) {
+    h1 {
+        font-size: 2.4rem;
+    }
+
+    h2 {
+        font-size: 1.85rem;
+    }
+
+    h3 {
+        font-size: 1.15rem;
+    }
+
+    #navn {
+        font-size: 30px;
+    }
+}

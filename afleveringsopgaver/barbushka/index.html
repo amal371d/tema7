@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Babushka</title>
-    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="main.css">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@500&display=swap" rel="stylesheet">
@@ -13,26 +14,258 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
+
+    <style>
+        section {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-gap: 25px;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 40px;
+        }
+
+        #splash {
+            width: 100%;
+            background-size: cover;
+            background-image: url(img/splash.jpg);
+            max-width: none;
+            height: 50vh;
+            background-position: 20% 10%;
+        }
+
+        /*article*/
+
+        article {
+            border: 2px solid #753740;
+            padding: 15px 10px 20px 10px;
+        }
+
+        article p {
+            padding: 0px 10px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        article button {
+            margin-left: 10px;
+            margin-bottom: 5px;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #753740;
+            border: none;
+            color: #D8C9CB;
+            text-align: center;
+            padding: 10px 16px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        /*navigation/button + class til knapper*/
+
+        #navn {
+            position: fixed;
+            width: 100%;
+        }
+
+        nav button {
+            background-color: #D8C9CB;
+            color: black;
+            border: none;
+            padding: 11px 23px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 5px;
+        }
+
+
+        #menukort {
+            display: flex;
+            gap: 13px;
+        }
+
+        .valgt {
+            border: 1.8px solid #753740;
+            box-shadow: none;
+        }
+
+        /*fonts*/
+
+        h1 {
+            padding: 10px 0px;
+            text-align: center;
+        }
+
+        article .information {
+            font-size: 0.85rem;
+        }
+
+        article .pris {
+            font-size: 0.9rem;
+        }
+
+        /*burgermenu*/
+
+        .hidden {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        #menuknap {
+            display: inline-block;
+            cursor: pointer;
+
+            text-align: left;
+        }
+
+        #menu {
+            list-style-type: none;
+            transition: transform 0.4s;
+            transform-origin: top;
+            text-align: center;
+            padding-top: 10px;
+            margin-left: -40px;
+        }
+
+        .change .bar1 {
+            -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+            transform: rotate(-45deg) translate(-9px, 6px);
+        }
+
+        .change .bar2 {
+            opacity: 0;
+        }
+
+        .change .bar3 {
+            -webkit-transform: rotate(45deg) translate(-8px, -8px);
+            transform: rotate(45deg) translate(-9px, -9px);
+        }
+
+        .bar1,
+        .bar2,
+        .bar3 {
+            width: 35px;
+            height: 3px;
+            background-color: black;
+            margin: 6px 0;
+            transition: 0.4s;
+            margin: 9px 0;
+        }
+
+        nav ul {
+            position: absolute;
+            z-index: 1;
+            background-color: #D8C9CB;
+            width: 100%;
+            height: 42vh;
+            padding: 0;
+            margin: 0 auto;
+            margin-top: 44px;
+        }
+
+        /*mediaQ*/
+
+        @media (min-width:600px) {
+
+            /*font i article*/
+            article .information {
+                font-size: 0.9rem;
+            }
+
+            article .pris {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (min-width: 760px) {
+
+            /*burgermenu*/
+            #menuknap {
+                display: none;
+            }
+
+            #menu.hidden {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            #menu li {
+                display: inline-block;
+            }
+
+            #menukort {
+                justify-content: center;
+            }
+
+            #menu {
+                margin-left: 0px;
+            }
+
+            /*knapperne i navigationen*/
+
+            .valgt {
+                box-shadow: 0px 0px 20px -7.5px rgba(0, 0, 0, 0.75);
+            }
+
+            nav ul {
+                position: relative;
+                height: 10vh;
+            }
+
+            /*font*/
+            h1 {
+                margin-bottom: -10px;
+                text-align: left;
+            }
+        }
+
+        @media (min-width: 900px) {
+
+            /*fonts*/
+            article .information {
+                font-size: 0.95rem;
+            }
+
+            article .pris {
+                font-size: 1rem;
+            }
+        }
+
+    </style>
+
 </head>
 
 <body>
-    <nav id="navn">
-        <a href="index.html">Barbushka</a>
-    </nav>
+    <div id="navn">
+        <a href="index.html">Bistro Babushka</a>
+    </div>
 
     <header id="splash"></header>
 
     <main>
         <h1>Velkommen til Bistro Babushka</h1>
+
         <nav id="menukort">
-            <button data-kategorier="alle" class="valgt">Alle</button>
-            <button data-kategorier="forretter">Forretter</button>
-            <button data-kategorier="hovedretter">Hovedretter</button>
-            <button data-kategorier="sideorders">Sideorders</button>
-            <button data-kategorier="desserter">Dessert</button>
-            <button data-kategorier="drikkevarer">Drikkevarer</button>
+            <div id="menuknap">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+            <ul id="menu" class="hidden">
+                <li><button data-kategorier="alle" class="valgt">Alle</button></li>
+                <li><button data-kategorier="forretter">Forretter</button></li>
+                <li><button data-kategorier="hovedretter">Hovedretter</button></li>
+                <li><button data-kategorier="sideorders">Sideorders</button></li>
+                <li><button data-kategorier="desserter">Dessert</button></li>
+                <li><button data-kategorier="drikkevarer">Drikkevarer</button></li>
+            </ul>
         </nav>
-        <h2>Alle retter</h2>
+
+        <h2>Alle</h2>
 
         <section id="liste"></section>
 
@@ -42,7 +275,7 @@
                 <h3 class="ret"></h3>
                 <p class="information"></p>
                 <p class="pris"> Pris: </p>
-                <button>Læs mere</button>
+                <button class="more">Læs mere</button>
             </article>
         </template>
 
@@ -57,7 +290,89 @@
             Lørdag: 12.00 - 23.00</p>
     </footer>
 
-    <script src="script2.js"></script>
+    <script>
+        const overskrift = document.querySelector("h2");
+        const medieurl = "https://babushka-dd8a.restdb.io/media/";
+
+        const myHeaders = {
+            "x-apikey": "600ec2fb1346a1524ff12de4"
+        }
+
+        document.addEventListener("DOMContentLoaded", start)
+        let kategori;
+        let filter = "alle";
+
+        // første funktion der kaldes efter DOM er loaded
+        function start() {
+            const filterKnapper = document.querySelectorAll("nav button");
+            filterKnapper.forEach(knap => knap.addEventListener("click", filtrerRetter));
+            loadJSON();
+
+            document.querySelector("#menuknap").addEventListener("click", toggleMenu);
+        }
+
+        function toggleMenu() {
+            console.log("toggelMenu");
+            document.querySelector("#menu").classList.toggle("hidden");
+            document.querySelector("#menuknap").classList.toggle("change");
+        }
+
+        // eventlistener knyttet til knapperne der vælger hvilket filter der er aktivt
+        function filtrerRetter() {
+            filter = this.dataset.kategorier; //sæt variablen "filter" til værdien af data-kategorier på den knap der er trykket på
+
+            // fjerne classen fra tidligere knap
+            document.querySelector(".valgt").classList.remove("valgt");
+
+            //markerer den knap der er blevet trykket på
+            this.classList.add("valgt");
+
+            visRetter(); //kalder funktionen visPersoner, efter det nye filter er sat
+
+            console.log(this);
+            overskrift.textContent = this.textContent;
+        }
+
+        async function loadJSON() {
+            const JSONData = await fetch("https://babushka-dd8a.restdb.io/rest/menu", {
+                headers: myHeaders
+            });
+            kategori = await JSONData.json();
+            console.log("Kategorierne", kategori);
+            visRetter();
+        }
+
+        //funktion der viser personer i liste view
+        function visRetter() {
+
+            const dest = document.querySelector("#liste"); // container til articles med en person
+            const skabelon = document.querySelector("template").content; // select indhold af html skabelon (article)
+
+            //ryd container inden loop
+            dest.textContent = "";
+
+            kategori.forEach(ret => {
+                console.log("Kategori", ret.kategori);
+                if (filter == ret.kategori || filter == "alle") {
+
+                    // loop igennem json (personer)
+                    const klon = skabelon.cloneNode(true);
+                    klon.querySelector(".billede").src = medieurl + ret.billede;
+                    klon.querySelector(".billede").alt = "" + ret.navn;
+                    klon.querySelector(".ret").textContent = ret.navn;
+                    klon.querySelector(".information").textContent = ret.kortbeskrivelse;
+                    klon.querySelector(".pris").textContent += ` ${ret.pris} DKK`;
+                    klon.querySelector(".more").addEventListener("click", () => visDetaljer(ret));
+                    dest.appendChild(klon);
+                }
+            })
+        }
+
+        function visDetaljer(hvilken) {
+            location.href = `specifikation.html?id=${hvilken._id}`;
+        }
+
+    </script>
 </body>
 
 </html>
